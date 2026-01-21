@@ -7,7 +7,8 @@ import {
 	getPublishers, getPublisher,
 	getLanguages, getLanguage,
 	getGenres, getGenre,
-	login, getAsset
+	login, refreshToken,
+	getAsset
 } from '../controllers'
 
 
@@ -19,7 +20,7 @@ export function Routes() {
 	router.get('/User', getUsers);
 	router.get('/User/:id', getUser);
 
-	router.get('/Favorite/:user_id', getFavorites);
+	router.get('/Favorite/:token', getFavorites);
 	router.post('/Favorite', addFavorite);
 	router.delete('/Favorite', removeFavorite);
 
@@ -39,7 +40,8 @@ export function Routes() {
 	router.get('/Genre', getGenres);
 	router.get('/Genre/:id', getGenre);
 
-	router.post('/Login', login);
+	router.post('/auth/Login', login);
+	router.post('/auth/Refresh', refreshToken);
 
 	router.get('/Asset/{*filepath}', getAsset);
 

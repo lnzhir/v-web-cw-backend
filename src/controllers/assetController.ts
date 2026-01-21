@@ -12,7 +12,6 @@ export function getAsset(req: Request, res: Response) {
 		for (let p of filepath) {
 			resPath += "/" + p
 		}
-		
 
 		res.status(200).sendFile(join(process.cwd(), "items", resPath));
 	} catch (err) {

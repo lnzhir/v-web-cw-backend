@@ -24,8 +24,6 @@ export async function getBooksEx(req: Request, res: Response) {
 		const { where, order_by } = req.body;
 		const repo = AppDataSource.getRepository(Book);
 
-		// const where = {}
-		// where[key] = value
 		const order = {}
 		order[order_by] = "ASC"
 

@@ -22,6 +22,9 @@ export class Book {
   file: string
 
   @Column()
+  description: string
+
+  @Column()
   publish_year: number
 
   @Column()

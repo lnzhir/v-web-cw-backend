@@ -33,7 +33,9 @@ CREATE TABLE public.authors
 	image varchar(255),
 	first_name varchar(255) NOT NULL,
 	sur_name varchar(255),
-	last_name varchar(255)
+	last_name varchar(255),
+	year integer,
+	year_end integer
 );
 
 -- издатели
@@ -53,6 +55,7 @@ CREATE TABLE public.books
 	title varchar(255) NOT NULL,
 	image varchar(255),
 	file varchar(255),
+	description varchar(4096),
 	publish_year integer NOT NULL,
 	publisher_id bigint references publishers(id),
 	language_id bigint references languages(id)

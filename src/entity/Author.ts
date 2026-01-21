@@ -18,6 +18,12 @@ export class Author {
   @Column()
   last_name: string
 
+  @Column()
+  year: number
+
+  @Column()
+  year_end: number
+
   @ManyToMany(() => Book, (book: Book) => book.authors)
   books: Promise<Book[]>;
 }
